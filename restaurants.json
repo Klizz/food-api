@@ -1,0 +1,97 @@
+[
+    {
+        "id": "1",
+        "name": "Ensaladas",
+        "zona": "sur",
+        "menu": [
+            {
+                "id": "001",
+                "name": "Ensalada Cesar"
+            },
+            {
+                "id": "002",
+                "name": "Ensalada griega"
+            },
+            {
+                "id": "003",
+                "name": "Ensalada de pollo"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Alitas",
+        "zona": "Norte",
+        "menu": [
+            {
+                "id": "004",
+                "name": "Alitas BBQ"
+            },
+            {
+                "id": "005",
+                "name": "Alitas Bufalo"
+            },
+            {
+                "id": "006",
+                "name": "Boneless"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Sushi express",
+        "zona": "sur",
+        "menu": [
+            {
+                "id": "007",
+                "name": "Maki roll"
+            },
+            {
+                "id": "008",
+                "name": "Tampico roll"
+            },
+            {
+                "id": "009",
+                "name": "Tempura de pescado"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Taquitos",
+        "zona": "sur",
+        "menu": [
+            {
+                "id": "010",
+                "name": "Taco de trompo"
+            },
+            {
+                "id": "011",
+                "name": "Taco de bistec"
+            },
+            {
+                "id": "012",
+                "name": "Campechana"
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Super Burgers",
+        "zona": "centro",
+        "menu": [
+            {
+                "id": "1",
+                "name": "Hamburguesa doble"
+            },
+            {
+                "id": "1",
+                "name": "Hamburguesa de pollo"
+            },
+            {
+                "id": "1",
+                "name": "Hamburguesa BBQ & aros"
+            }
+        ]
+    }
+]
