@@ -6,15 +6,18 @@
         "menu": [
             {
                 "id": "001",
-                "name": "Ensalada Cesar"
+                "name": "Ensalada Cesar",
+                "price": "80"
             },
             {
                 "id": "002",
-                "name": "Ensalada griega"
+                "name": "Ensalada griega",
+                "price": "80"
             },
             {
                 "id": "003",
-                "name": "Ensalada de pollo"
+                "name": "Ensalada de pollo",
+                "price": "80"
             }
         ]
     },
@@ -25,15 +28,18 @@
         "menu": [
             {
                 "id": "004",
-                "name": "Alitas BBQ"
+                "name": "Alitas BBQ",
+                "price": "80"
             },
             {
                 "id": "005",
-                "name": "Alitas Bufalo"
+                "name": "Alitas Bufalo",
+                "price": "80"
             },
             {
                 "id": "006",
-                "name": "Boneless"
+                "name": "Boneless",
+                "price": "80"
             }
         ]
     },
@@ -44,15 +50,18 @@
         "menu": [
             {
                 "id": "007",
-                "name": "Maki roll"
+                "name": "Maki roll",
+                "price": "80"
             },
             {
                 "id": "008",
-                "name": "Tampico roll"
+                "name": "Tampico roll",
+                "price": "80"
             },
             {
                 "id": "009",
-                "name": "Tempura de pescado"
+                "name": "Tempura de pescado",
+                "price": "80"
             }
         ]
     },
@@ -63,15 +72,18 @@
         "menu": [
             {
                 "id": "010",
-                "name": "Taco de trompo"
+                "name": "Taco de trompo",
+                "price": "80"
             },
             {
                 "id": "011",
-                "name": "Taco de bistec"
+                "name": "Taco de bistec",
+                "price": "80"
             },
             {
                 "id": "012",
-                "name": "Campechana"
+                "name": "Campechana",
+                "price": "80"
             }
         ]
     },
@@ -82,15 +94,18 @@
         "menu": [
             {
                 "id": "1",
-                "name": "Hamburguesa doble"
+                "name": "Hamburguesa doble",
+                "price": "80"
             },
             {
                 "id": "1",
-                "name": "Hamburguesa de pollo"
+                "name": "Hamburguesa de pollo",
+                "price": "80"
             },
             {
                 "id": "1",
-                "name": "Hamburguesa BBQ & aros"
+                "name": "Hamburguesa BBQ & aros",
+                "price": "80"
             }
         ]
     }
