@@ -48,7 +48,7 @@ APP.post("/zona/:id/menu/unselect", (req, res) => {
   res.json({ status: 'success', result: {cart: cart} });
 })
 
-APP.get("*", (req, res) => {
+APP.get("*", (res) => {
   res.send("page not found");
 });
 
