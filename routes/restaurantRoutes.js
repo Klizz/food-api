@@ -15,20 +15,29 @@ restaurantROUTER.get("/", (req, res) => {
 });
 
 restaurantROUTER.post("/newOrder/:id", (req, res) => {
-    let newOrder = "hamburguesa"
-    currentOrders.push(newOrder);
-    console.log(currentOrders);
-    res.send("nuevo pedido");
+    let newOrder = restaurants.find( r => r.id == req.params.id).menu.find(m => m.id == req.query.item)
+    if (newOrder) {
+        currentOrders.push(newOrder);
+        res.send(newOrder.name + " ha sido agregado a las ordenes pendientes");
+    } else {
+        res.send("Ese producto no existe")
+    }
 });
 
-restaurantROUTER.post("/rejectOrder", (req, res) => {
-    let newOrder = "Alitas"
-    res.send("La orden de " + newOrder + " ha sido rechazada");
+restaurantROUTER.post("/rejectOrder/:id", (req, res) => {
+    let rejectedOrder = restaurants.find( r => r.id == req.params.id).menu.find(m => m.id == req.query.item);
+    if (rejectedOrder) {
+        res.send("La orden de "  + rejectedOrder.name  + " ha sido rechazada");
+    } else {
+        res.send("El producto que intentas rechazar no existe")
+    }
 });
 
-restaurantROUTER.post("/finishOrder", (req, res) => {
-    let finishedOrder = currentOrders.pop(currentOrders[0]);
-    res.send("El pedido de " + finishedOrder + " ha sido terminado");
+restaurantROUTER.post("/finishOrder/:id", (req, res) => {
+    // let toFinish = currentOrders.filter(m => m.id != req.body.item)
+    currentOrders.pop();
+    res.send("El pedido ha sido terminado");
 });
 
+export default currentOrders;
 module.exports = restaurantROUTER;
