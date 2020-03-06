@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import restaurants from "../restaurants";
-import currentOrders from './restaurantRoutes';
+import currentOrders from "./restaurantRoutes";
 const APP = express();
 
 APP.use(bodyParser.urlencoded({ extended: false }));
@@ -30,10 +30,9 @@ deliveryROUTER.post("/rejectOrder/:id", (req, res) => {
   res.send("La orden de " + rejectOrder.name + " ha sido rechazada");
 });
 
-/* deliveryROUTER.post("/finishOrder/:id", (req, res) => {
-  // let toFinish = currentOrders.filter(m => m.id != req.body.item)
-  currentOrders.pop();
-  res.send("El pedido ha sido terminado");
-}); */
+deliveryROUTER.delete("/finishOrder/:id", (req, res) => {
+  let orders = pendingDeliveries.filter(m => m.id != req.query.item);
+  res.send(orders);
+});
 
 module.exports = deliveryROUTER;

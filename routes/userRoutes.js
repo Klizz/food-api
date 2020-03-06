@@ -41,9 +41,4 @@ userROUTER.post("/zona/:id/menu/unselect", (req, res) => {
   res.json({ status: 'success', result: {cart: cart} });
 })
 
-userROUTER.get("*", (res) => {
-  res.send("page not found");
-});
-
-
 module.exports = userROUTER;
