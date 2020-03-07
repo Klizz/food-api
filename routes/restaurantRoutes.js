@@ -6,7 +6,7 @@ const APP = express();
 APP.use(bodyParser.urlencoded({ extended: false }));
 APP.use(bodyParser.json());
 
-let currentOrders = [];
+const currentOrders = [];
 
 const restaurantROUTER = express.Router();
 // VER EL COSTO TOTAL DE LOS PRODUCTOS EN EL ARRAY DE ÓRDENES
@@ -20,8 +20,11 @@ restaurantROUTER.get("/", (req, res) => {
     return parseInt(x, 0);
   });
   // Calcula la suma de todos los elementos del array de costos
-  const total = cost.reduce((a, b) => a + b, 0);
-  res.send("El costo total es de " + total);
+  const total = cost.reduce((a, b) => a + b, 0)
+  const royalty = Math.floor(total * 0.15);
+  const earnings = total - royalty;
+  res.send("El costo total de los productos es de " + total.toString() + ", de los cuales, " 
+  + royalty + " es para Uber y " + earnings + " es para el restaurante");
 });
 
 
