@@ -7,9 +7,9 @@ const USERROUTES = require('./routes/userRoutes');
 const RESTAURANTROUTES = require('./routes/restaurantRoutes');
 const DELIVERYROUTES = require('./routes/deliveryRoutes');
 
-APP.use('/user', USERROUTES);
-APP.use('/restaurant', RESTAURANTROUTES);
-APP.use('/delivery', DELIVERYROUTES);
+APP.use('/user', USERROUTES); // Rutas del usuario
+APP.use('/restaurant', RESTAURANTROUTES); // Rutas del restaurante
+APP.use('/delivery', DELIVERYROUTES); // Rutas del repartidor
 
 const SERVER = http.createServer(APP);
 

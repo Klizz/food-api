@@ -6,49 +6,45 @@ const APP = express();
 APP.use(bodyParser.urlencoded({ extended: false }));
 APP.use(bodyParser.json());
 
-const currentOrders = [];
+let currentOrders = [];
 
 const restaurantROUTER = express.Router();
-
+// VER EL COSTO TOTAL DE LOS PRODUCTOS EN EL ARRAY DE ÓRDENES
 restaurantROUTER.get("/", (req, res) => {
+  // Regresa array con lista de precios de los productos aceptados
   let precios = currentOrders.map(function(total) {
     return total.price;
   });
+  // Transforma el array a número
   let cost = precios.map(function(x) {
     return parseInt(x, 0);
   });
+  // Calcula la suma de todos los elementos del array de costos
   const total = cost.reduce((a, b) => a + b, 0);
-  console.log(total);
-  res.send("El costo total de los productos es de " + total);
+  res.send("El costo total es de " + total);
 });
 
-restaurantROUTER.post("/newOrder/:id", (req, res) => {
+
+// ACEPTAR O RECHAZAR PEDIDO, PIDE ID Y TRUE SI EL PEDIDO ES ACEPTADO
+restaurantROUTER.post("/incommingOrder/:id", (req, res) => {
+  // Encuentra el producto dado
   let newOrder = restaurants
-    .find(r => r.id == req.params.id)
-    .menu.find(m => m.id == req.query.item);
-  if (newOrder) {
+  .find(r => r.id == req.params.id)
+  .menu.find(m => m.id == req.query.item);
+  // Si el producto es true (aceptado), es agregado al array
+  let accept = req.query.accept;
+  if (newOrder && accept == "true") {
     currentOrders.push(newOrder);
     res.json(currentOrders);
   } else {
-    res.send("Ese producto no existe");
+    res.json(currentOrders);
   }
 });
 
-restaurantROUTER.post("/rejectOrder/:id", (req, res) => {
-  let rejectedOrder = restaurants
-    .find(r => r.id == req.params.id)
-    .menu.find(m => m.id == req.query.item);
-  if (rejectedOrder) {
-    res.send("La orden de " + rejectedOrder.name + " ha sido rechazada");
-  } else {
-    res.send("El producto que intentas rechazar no existe");
-  }
-});
-
+// QUITAR UN PEDIDO EN ESPECÍFICO DANDO EL ID
 restaurantROUTER.delete("/finishOrder/:id", (req, res) => {
   let orders = currentOrders.filter(m => m.id != req.query.item);
   res.send(orders);
 });
 
-export default currentOrders;
 module.exports = restaurantROUTER;
